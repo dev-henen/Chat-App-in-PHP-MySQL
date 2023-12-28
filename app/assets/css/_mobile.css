@@ -1,0 +1,880 @@
+@font-face {
+    font-family: notoColorEmoji;
+    src: url(/app/assets/fonts/NotoColorEmoji-Regular.ttf);
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #fff;
+    color: #000;
+}
+* { 
+    box-sizing: border-box; 
+    margin: 0;
+}
+body::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+body > .left,
+body > .middle,
+body > .right {
+    display: block;
+    height: 100%;
+    float: left;
+    padding: 8px;
+    overflow: hidden;
+    background-color: transparent;
+}
+body > .left {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
+    text-align: center;
+    height: auto;
+    padding: 10px;
+    z-index: 2;
+}
+body > .left::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+body > .left > .in-left {
+    width: auto;
+    height: auto;
+    float: left;
+}
+body > .left > .in-left:first-child {
+    height: auto;
+    padding-top: 3px;
+    width: 10%;
+}
+body > .left > .in-left:first-child a {
+    display: inline-block;
+    color: #fff;
+    background-color: rgb(12, 172, 12);
+    text-decoration: none;
+    padding: 5px 7px;
+    border-radius: 50%;
+}
+body > .left > .in-left:nth-child(2) {
+    height: auto;
+    width: 80%;
+    text-align: center;
+}
+body > .left > .in-left:nth-child(2) ul,
+body > .left > .in-left:nth-child(2) ul li {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+}
+body > .left > .in-left:nth-child(2) ul li {
+    padding: 3px;
+}
+body > .left > .in-left:nth-child(2) ul li a {
+    display: inline-block;
+    color: #505050;
+    background-color: transparent;
+    border-radius: 50%;
+    padding: 8px;
+    font-size: 1.8em;
+    transition: 0.3s;
+}
+body > .left > .in-left:nth-child(2) ul li a:hover {
+    background-color: rgb(183, 198, 241);
+    color: #4169e1;
+}
+body > .left > .in-left:last-child {
+    height: auto;
+    float: right;
+    width: 10%;
+}
+body > .left > .in-left:last-child .icon {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    padding: 2px;
+    background-color: inherit;
+    border-radius: 50%;
+    overflow: hidden;
+}
+body > .left > .in-left:last-child .icon img {
+    width: 100%;
+    height: auto;
+    transform: scale(1.3);
+}
+body > .left > .in-left:last-child div:last-child {
+    font-size: 1.5em;
+    color: #8a2be2;
+    display: none;
+}
+
+
+
+
+
+
+
+body > .middle {
+    width: 100%;
+    padding-right: 0;
+    background-color: #e4eefd;
+    margin-top: 70px;
+}
+body > .middle > div {
+    padding: 15px;
+    padding-left: 0;
+    padding-right: 0;
+}
+body > .middle > div h2 {
+    color: #4169e1;
+    padding-bottom: 15px;
+}
+body > .middle > div form {
+    position: relative;
+    display: block;
+    background-color: #fff;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 3px;
+    border-radius: 6px;
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
+    overflow: visible;
+}
+body > .middle > div form::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+body > .middle > div form button {
+    color: #4169e1;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    width: 10%;
+    float: left;
+    padding: 8px;
+    font-size: 1em;
+}
+body > .middle > div form input {
+    border: none;
+    background-color: transparent;
+    outline: none;
+    padding: 8px;
+    width: 90%;
+    float: left;
+}
+/***********************************/
+body > .middle > div form .result {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 38px;
+    width: 100%;
+    min-height: 400px;
+    background-color: #fff;
+    padding: 10px 5px;
+    z-index: 4;
+}
+body > .middle > div form .result ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+body > .middle > div form .result ul li {
+    padding: 10px 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+body > .middle > div form .result ul li > .left {
+    padding-right: 10px;
+}
+body > .middle > div form .result ul li > .left .icon {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+body > .middle > div form .result ul li > .left .icon img {
+    width: 100%;
+}
+body > .middle > div form .result ul li > .center {
+    width: 70%;
+}
+body > .middle > div form .result ul li > .center .title {
+    color: #606060;
+}
+body > .middle > div form .result ul li > .center .userkey {
+    color: #2d59db;
+    text-decoration: underline;
+    font-size: 0.9em;
+}
+body > .middle > div form .result ul li > .right .button {
+    background-color: #2d59db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 10px;
+    width: 50px;
+}
+
+
+body > .middle > div .chats {
+    padding: 15px 0px;
+    padding-top: 30px;
+    overflow: hidden;
+    overflow-y: auto;
+    padding-bottom: 100px;
+    max-height: 90vh;
+}
+body > .middle > div .chats .user {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    padding: 8px 10px;
+    border-radius: 6px;
+}
+body > .middle > div .chats .user:hover {
+    background-color: #4169e11a;
+}
+body > .middle > div .chats .user::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+body > .middle > div .chats .user div {
+    float: left;
+    width: 75%;
+}
+body > .middle > div .chats .user div:first-child {
+    width: 15%;
+}
+body > .middle > div .chats .user div:first-child > span {
+    display: inline-block;
+    position: relative;
+}
+body > .middle > div .chats .user div:first-child > span .icon {
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    overflow: hidden;
+    border-radius: 50%;
+}
+body > .middle > div .chats .user div:first-child .icon img {
+    width: 100%;
+    height: auto;
+}
+body > .middle > div .chats .user div:first-child > span .status {
+    display: inline-block;
+    position: absolute;
+    background-color: rgb(36, 223, 36);
+    padding: 4px;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    bottom: 0;
+    right: 0;
+}
+body > .middle > div .chats .user div:first-child > span .status-off {
+    background-color: #f00;
+}
+body > .middle > div .chats .user div:nth-child(2) {
+    overflow: hidden;
+    position: relative;
+}
+body > .middle > div .chats .user div:nth-child(2) > h3 {
+    font-size: 0.9em;
+    color: #000;
+    padding: 0;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+}
+body > .middle > div .chats .user div:nth-child(2) > div {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    position: relative;
+    font-size: 0.8em;
+    color: #505050;
+    padding: 4px;
+    font-family: Helvetica, notoColorEmoji;
+}
+body > .middle > div .chats .user div:nth-child(2) > div > span {
+    position: absolute;
+    background-color: transparent;
+    background-image: -webkit-linear-gradient(to right, #e4eefd62, #e4eefdad, #e4eefd);
+    background-image: linear-gradient(to right, #e4eefd62, #e4eefdad, #e4eefd);
+    display: inline-block;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 40px;
+}
+body > .middle > div .chats .user:hover div:nth-child(2) > div > span {
+    background-image: -webkit-linear-gradient(to right, transparent, transparent, transparent);
+    background-image: linear-gradient(to right, transparent, transparent, transparent);
+}
+
+
+
+
+
+
+
+
+
+
+
+body > .middle > div .chats .user div:last-child {
+    width: 10%;
+}
+body > .middle > div .chats .user div:last-child > span {
+    display: inline-block;
+    background-color: #4169e1;
+    color: #fff;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 0.7em;
+}
+body > .middle > div .chats .user div:last-child > time {
+    display: inline-block;
+    font-size: 0.8em;
+    color: #505050;
+    padding: 2px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body > .right {
+    background-color: #fff;
+    width: 100%;
+    padding: 8px;
+    padding-right: 0;
+    position: relative;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: none;
+    z-index: 3;
+}
+body > .right header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    width: 100%;
+    height: 60px;
+    box-shadow: 0px 0px 8px rgba(0,0,0,0.1);
+    border-bottom: 1px solid #ddd;
+    padding: 8px;
+    z-index: 1;
+}
+body > .right header::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+body > .right header > div:first-child {
+    width: 90%;
+    float: left;
+    overflow: hidden;
+    white-space: nowrap;
+}
+body > .right header > div:first-child > span {
+    display: inline-block;
+    position: relative;
+}
+body > .right header > div:first-child > span .back {
+    display: inline-block !important;
+    font-size: 2em;
+    color: inherit;
+    padding: 4px;
+}
+body > .right header > div:first-child > span .icon {
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    overflow: hidden;
+    border-radius: 50%;
+}
+body > .right header > div:first-child .icon img {
+    width: 100%;
+    height: auto;
+}
+body > .right header > div:first-child > span .status {
+    display: inline-block;
+    position: absolute;
+    background-color: rgb(36, 223, 36);
+    padding: 4px;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    bottom: 0;
+    right: 0;
+}
+body > .right header > div:first-child > span .status-off {
+    background-color: #f00;
+}
+body > .right header > div:first-child > .name {
+    position: relative;
+    display: inline-block;
+    font-size: 1em;
+    color: #0d0d0d;
+    font-weight: bold;
+    padding: 8px;
+    top: -20px;
+}
+body > .right header > div:last-child {
+    width: 10%;
+    float: left;
+    text-align: right;
+    padding: 2px;
+}
+body > .right header > div:last-child button {
+    background-color: #4169e154;
+    border: none;
+    color: #4169e1;
+    padding: 4px 6px;
+    border-radius: 50%;
+    font-size: 1.5em;
+}
+body > .right header > div:last-child button:hover {
+    background-color: #4169e1;
+    color: #fff;
+}
+
+
+
+
+
+
+
+
+body > .right section {
+    height: 100%;
+    position: relative;
+    padding-top: 60px;
+    padding-bottom: 80px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 100%;
+}
+body > .right section > div {
+    display: block;
+    width: 100%;
+    padding: 0px;
+    background-color: transparent;
+    padding-bottom: 6px;
+}
+body > .right section > div::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+
+
+
+body > .right section > div .left {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: flex-start;
+    width: 100%;
+    padding-right: 10%;
+}
+body > .right section > div .left .icon {
+    min-width: 30px;
+    width: 30px;
+    min-height: 30px;
+    height: 30px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
+}
+body > .right section > div .left .icon img {
+    width: 40px;
+    height: auto;
+    position: relative;
+    left: -3px;
+    top: -3px;
+}
+body > .right section > div .left p {
+    background-color: #abfaab;
+    padding: 5px;
+    padding-left: 18px;
+    position: relative;
+    box-shadow: 2px 2px 0px rgba(0,0,0,0.1);
+    font-size: 0.9em;
+    left: 20px;
+    min-width: 150px;
+    text-align: left;
+    font-family: Helvetica, notoColorEmoji;
+    max-width: 90%;
+    margin-right: 10%;
+    word-wrap: break-word;
+}
+
+body > .right section > div .left p::before {
+    content: "";
+    display: inline-block;
+    border: 7px solid #abfaab;
+    background-color: #abfaab;
+    position: absolute;
+    left: -5px;
+    height: 2px;
+    width: 3px;
+    transform: rotate(35deg);
+}
+body > .right section > div .left p span {
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    padding: 4px 3px 0px 0px;
+    font-size: 0.8em;
+    color: #0f0f0f;
+    text-align: right;
+}
+body > .right section > div .left p span .bi {
+    color: rgb(14, 196, 14);
+    font-size: 1.4em;
+    padding: 0;
+}
+
+
+
+
+
+body > .right section > div .right {
+    padding-left: 20%;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    align-items: flex-start;
+    min-width: 100%;
+}
+body > .right section > div .right .icon {
+    min-width: 30px;
+    width: 30px;
+    min-height: 30px;
+    height: 30px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
+    display: none;
+}
+body > .right section > div .right .icon img {
+    width: 40px;
+    height: auto;
+    position: relative;
+    left: -3px;
+    top: -3px;
+}
+body > .right section > div .right p {
+    background-color: #e4eefd;
+    padding: 5px;
+    padding-right: 18px;
+    position: relative;
+    box-shadow: 2px 2px 0px rgba(0,0,0,0.1);
+    font-size: 0.9em;
+    right: 20px;
+    min-width: 150px;
+    text-align: left;
+    width: auto;
+    font-family: Helvetica, notoColorEmoji;
+    max-width: 90%;
+    margin-left: 10%;
+    word-wrap: break-word;
+}
+
+body > .right section > div .right p::before {
+    content: "";
+    display: inline-block;
+    border: 7px solid #e4eefd;
+    background-color: #e4eefd;
+    position: absolute;
+    right: -5px;
+    height: 2px;
+    width: 3px;
+    transform: rotate(-35deg);
+}
+body > .right section > div .right p span {
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    padding: 4px 3px 0px 0px;
+    font-size: 0.8em;
+    color: #0f0f0f;
+    text-align: right;
+}
+body > .right section > div .right p span .bi {
+    color: rgb(14, 196, 14);
+    font-size: 1.4em;
+    padding: 0;
+}
+
+
+
+body > .right section > div .message p > span::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+body > .right section > div .message p > span > span {
+    width: 50%;
+    float: left;
+}
+body > .right section > div .message p > span > span:first-child {
+    text-align: left;
+}
+body > .right section > div .message p > span > span:first-child .bi {
+    cursor: pointer;
+}
+body > .right section > div .message p > span > span .bi {
+    color: rgb(14, 196, 14);
+    font-size: 1.4em;
+    padding: 0;
+}
+
+
+
+body > .right section > div .left .sharedImage,
+body > .right section > div .right .sharedImage {
+    background-color: transparent;
+    display: inline-block;
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+}
+body > .right section > div .left .sharedImage > div,
+body > .right section > div .right .sharedImage > div {
+    display: inline-block;
+    width: 200px;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0px 0px 1px #000;
+}
+body > .right section > div .left .sharedImage > div img,
+body > .right section > div .right .sharedImage > div img {
+    width: 100%;
+    height: auto;
+    transform: scale(1.5);
+}
+body > .right section > div .left .sharedImage > span,
+body > .right section > div .right .sharedImage > span  {
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    padding: 4px 3px 0px 0px;
+    font-size: 0.8em;
+    color: #0f0f0f;
+    text-align: right;
+}
+body > .right section > div .left .sharedImage > span .bi,
+body > .right section > div .right .sharedImage > span .bi  {
+    color: rgb(14, 196, 14);
+    font-size: 1.4em;
+    padding: 0;
+}
+body > .right section > .noChat {
+    text-align: center;
+    color: #0f0f0f;
+    font-size: 1em;
+}
+body > .right section > .noChat h3 {
+    font-size: 1.5em;
+    color: #505050;
+}
+
+
+
+
+body > .right section > .line {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+body > .right section > .line hr {
+    border: none;
+    border-bottom: 1px solid #ddd;
+    padding: 4px;
+}
+body > .right section > .line time {
+    display: inline-block;
+    background-color: #fff;
+    padding: 3px 15px;
+    position: absolute;
+    left: calc(50% - 50px);
+    right: calc(50% - 50px);
+    top: 3px;
+    font-size: 0.7em;
+    color: #909090;
+    width: 100px;
+    text-align: center;
+}
+
+#rootBanner { display: none; }
+
+
+
+
+
+
+
+
+
+body > .right footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    height: auto;
+    padding: 2px;
+    z-index: 1;
+}
+body > .right footer::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+body > .right footer > .type {
+    width: 70%;
+    float: left;
+    padding: 0px 5px;
+}
+body > .right footer > .type textarea {
+    border: 2px solid #ddd;
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
+    resize: none;
+    width: 100%;
+    padding: 11px 15px;
+    border-radius: 3px;
+    font-size: 0.9em;
+    position: relative;
+    top: 0;
+    font-family: Helvetica, notoColorEmoji;
+    transition: .3s;
+}
+body > .right footer > .type textarea:focus {
+    outline: none;
+    border: 2px solid #2d59db;
+    box-shadow: 0px 0px 15px #2d58db6e;
+    top: -10px;
+}
+body > .right footer > .send {
+    width: 30%;
+    float: left;
+    padding: 8px;
+    text-align: right;
+}
+body > .right footer > .send button {
+    position: relative;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 1em;
+    padding: 4px;
+    border-radius: 50%;
+    top: 0;
+}
+body > .right footer > .send button:hover {
+    top: -2px;
+}
+body > .right footer > .send span {
+    display: inline-block;
+    padding: 8px 5px;
+}
+body > .right footer > .send button:last-child {
+    background-color: #4169e1;
+    border-radius: 4px;
+    padding: 5px 8px;
+    color: #fff;
+}
+body > .right footer > .send button:last-child:hover {
+    background-color: #2d59db;
+}
+
+
+.loadMoreButton {
+    border: none;
+    padding: 4px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+}
+.additionHeader {
+    padding: 0;
+    width: 100%;
+    padding-top: 50px;
+}
+.additionHeader p {
+    font-size: 0.8em;
+    color: #505050;
+    text-align: center;
+    padding: 0px;
+}
+
+
+
+@media only screen and (max-width: 850px) {
+    /* body > .middle {
+        width: 20%;
+    }
+    body > .middle > div header {
+        display: none;
+    }
+    body > .middle > div .chats .user div {
+        display: none;
+    }
+    body > .middle > div .chats .user div:first-child {
+        display: initial;
+        min-width: 50%;
+        width: 50%;
+    }
+    body > .right {
+        width: 80%;
+    }
+    body > .right footer > div:first-child {
+        width: 70%;
+    }
+    body > .right footer > .send {
+        width: 30%;
+    } */
+}

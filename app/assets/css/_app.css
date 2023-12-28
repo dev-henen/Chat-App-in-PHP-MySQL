@@ -1,0 +1,468 @@
+/**
+    @color-1: #FFFFFF;
+    @color-2: #000000;
+    @color-3: #8A2BE2;
+    @color-4: #4169E1;
+    @color-5: #FF6347;
+*/
+@font-face {
+    font-family: notoColorEmoji;
+    src: url(/app/assets/fonts/NotoColorEmoji-Regular.ttf);
+}
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #100f1b;
+    font-family: Helvetica, sans-serif;
+    color: #ddd;
+}
+* { box-sizing: border-box; }
+h1, h2, h3, h4, h5, h6 {
+    color: #222;
+    text-shadow: 0px 0px 2px rgba(0,0,0,00.1);
+    padding: 0;
+    margin: 0;
+}
+.LOGO {
+    color: #fff !important;
+    font-size: 1.7em !important;
+    padding: 0px !important;
+    text-shadow: 2px 2px 0px #000, 4px 4px 0px royalblue !important;
+    margin: 0 !important;
+    position: relative !important;
+    user-select: none !important;
+    text-align: center;
+}
+
+#fly {
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+}
+#fly > div {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding-top: 50%;
+    overflow: hidden;
+}
+#fly > div #loading {
+    width: 50%;
+    max-width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #fff;
+    padding: 1px;
+    padding-bottom: 2px;
+    border-radius: 5px;
+    overflow: hidden;
+    max-height: 10px;
+}
+#fly > div #loading span {
+    display: inline-block;
+    width: 80px;
+    max-width: 80%;
+    padding: 2px;
+    margin-bottom: 5px;
+    background-color: #4169e1;
+    position: relative;
+    animation: LoadNew 1s infinite alternate-reverse;
+}
+@keyframes LoadNew {
+    from { left: -100%; }
+    to { left: 100%; }
+}
+.ajax {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255,2555,255,0.5);
+    z-index: 999;
+}
+.ajax > .loader {
+    width: 40px;
+    height: 40px;
+    border: 3px solid #ddd;
+    border-bottom: 3px solid #4169e1;
+    border-radius: 50%;
+    margin: 50% auto 0 auto;
+    margin: 40vh auto 0 auto;
+    animation: Ajax 1s infinite;
+}
+@keyframes Ajax {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.pop-alert {
+    background-color: #ddffdd;
+    text-align: center;
+    padding: 2px;
+    height: auto;
+    max-width: 100%;
+    color: #0d0d0d;
+    box-shadow: 0px 0px 8px rgba(0,0,0,0.2);
+    transition: 0.3s;
+    position: fixed;
+    top: 0;
+    left: auto;
+    right: auto;
+    display: none;
+    border-bottom-left-radius: 18px;
+    border-bottom-right-radius: 18px;
+    animation: pop-from-top 1s;
+    z-index: 99;
+}
+.pop-alert span {
+    display: block;
+    text-align: right;
+    font-size: 1.3em;
+    color: #000;
+    padding: 6px;
+    text-shadow: 2px 2px 0px #fff;
+    cursor: pointer;
+}
+.pop-alert div {
+    text-align: center;
+    padding: 4px;
+    font-size: 0.9em;
+}
+@keyframes pop-from-top {
+    from { top: -100%; }
+    to { top: 0%; }
+}
+
+.view-box {
+    display: none;
+    background-color: rgba(255,255,255,0.5);
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+}
+.view-box > .view {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    position: relative;
+    padding-bottom: 10px;
+    overflow-y: auto;
+}
+
+
+.sendFile {
+    position: fixed;
+    right: 0;
+    bottom: 100px;
+    background-color: #fff;
+    border-bottom-left-radius: 35px;
+    border-top-left-radius: 35px;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
+    width: auto;
+    height: auto;
+    padding: 8px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    max-height: 50%;
+    overflow: hidden;
+    z-index: 10;
+    text-align: center;
+    animation: FromTop .5s;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #ddd;
+}
+@keyframes FromTop {
+    from { right: -100px; }
+    to { right: 0px; }
+}
+.sendFile > .selector {
+    display: inline-block;
+    position: relative;
+    padding: 8px;
+    overflow: hidden;
+}
+.sendFile > .selector form .bi {
+    font-size: 2em;
+    color: #4169e1;
+}
+.sendFile .selector form input {
+    opacity: 1;
+    background-color: transparent;
+    border: none;
+    font-size: 0.9em;
+    position: absolute;
+    top: 0;
+    right: 50px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+.sendFile > .cancel {
+    display: inline-block;
+    padding: 8px;
+}
+.sendFile > .cancel .bi {
+    font-size: 1.5em;
+    cursor: pointer;
+}
+.replyContainer {
+    position: fixed;
+    right: 0;
+    bottom: 100px;
+    background-color: #000;
+    padding: 4px;
+    min-width: 50%;
+    max-width: 90%;
+    color: #fff;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
+    max-height: 80%;
+    display: none;
+    font-family: Helvetica, notoColorEmoji;
+    font-size: 0.8em;
+    animation: ReplyContainerAnimation .5s;
+}
+
+@keyframes ReplyContainerAnimation {
+    from {
+        right: -100%;
+    }
+    to {
+        right: 0%;
+    }
+}
+.replyContainer .replyCancel {
+    font-size: 2em;
+    padding: 8px;
+    cursor: pointer;
+}
+.replyContainer #replyText {
+    padding: 8px;
+    word-wrap: break-word;
+}
+.replyContainer #replyText::before {
+    content: "Reply to: ";
+    display: block;
+    font-size: 1em;
+    font-weight: bold;
+    padding-bottom: 4px;
+}
+.replyTextBox {
+    display: block;
+    padding: 8px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.replyTextMessage {
+    display: inline-block;
+    position: relative;
+    background-color: #ffd700;
+    padding: 4px;
+    font-size: 0.7em;
+    font-family: Helvetica, NotoColorEmoji;
+}
+
+
+.updatePhoto {
+    position: fixed;
+    left: 0;
+    top: 100px;
+    background-color: #fff;
+    border-bottom-right-radius: 35px;
+    border-top-right-radius: 35px;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
+    width: auto;
+    height: auto;
+    padding: 8px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    max-height: 50%;
+    overflow: hidden;
+    z-index: 10;
+    text-align: center;
+    animation: FromLeft .5s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #ddd;
+}
+@keyframes FromLeft {
+    from { left: -100px; }
+    to { left: 0px; }
+}
+.updatePhoto > .selector {
+    display: inline-block;
+    position: relative;
+    padding: 8px;
+    overflow: hidden;
+}
+.updatePhoto > .selector form .bi {
+    font-size: 2em;
+    color: #4169e1;
+}
+.updatePhoto .selector form input {
+    opacity: 1;
+    background-color: transparent;
+    border: none;
+    font-size: 0.9em;
+    position: absolute;
+    top: 0;
+    right: 50px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+.updatePhoto > .cancel {
+    display: inline-block;
+    padding: 8px;
+}
+.updatePhoto > .cancel .bi {
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.addChat {
+    width: 100%;
+    padding: 8px;
+    text-align: center;
+}
+.addChat input[type=text] {
+    display: block;
+    width: 100%;
+    border: 1px solid #4169e1;
+    padding: 10px 25px;
+    text-align: center;
+}
+.addChat button,
+.addChat input[type=submit] {
+    display: inline-block;
+    padding: 8px 35px;
+    color: #fff;
+    background-color: #4169e1;
+    margin-top: 8px;
+    border: 1px solid #000;
+}
+.addChat button {
+    background-color: #1be01b;
+}
+.addChat button:hover {
+    background-color: #17c217;
+}
+.addChat input[type=submit]:hover {
+    background-color: #2b55d1;
+}
+.addChat .error {
+    color: rgb(224, 34, 34);
+    padding: 4px;
+    font-size: 0.9em;
+}
+
+.chatSetting {
+    padding: 4px;
+}
+.chatSetting .photo {
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #00ff00;
+    background: -webkit-linear-gradient(to top right, #87ceeb, transparent),
+                linear-gradient(to top, #00ff00 50%, transparent);
+    background: linear-gradient(to top right, #87ceeb, transparent),
+                linear-gradient(to top, #00ff00 50%, transparent);
+    background-blend-mode: screen;
+    height: 150px;
+    width: 150px;
+    border-radius: 30px;
+    box-shadow: 0px 0px 15px #00ff0031;
+    overflow: hidden;
+}
+.chatSetting .photo .inner {
+    width: 100%;
+    height: 100%;
+    border: 6px solid rgba(255,255,255,0.5);
+    border-radius: inherit;
+    padding: 8px;
+    overflow: hidden;
+}
+.chatSetting .photo .inner img {
+    width: 100%;
+    height: auto;
+    transform: scale(1.5);
+}
+.chatSetting .profile1 {
+    position: relative;
+    left: -50px;
+    width: 120px;
+    height: 120px;
+}
+.chatSetting .profile2 {
+    position: relative;
+    left: 20px;
+    top: -60px;
+    z-index: 1;
+}
+.chatSetting button {
+    background-color: #000;
+    border: none;
+    width: 100%;
+    color: #fff;
+    font-size: 0.9em;
+    padding: 15px;
+    border-radius: 25px;
+}
+
+
+
+
+@media only screen and (min-width: 768px) {
+    .LOGO {
+        text-align: left;
+    }
+    #fly > div {
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        padding-top: 20%;
+    }
+    #fly > div #loading {
+        width: 20%;
+        max-width: 20%;
+    }
+    .view-box > .view {
+        width: 40%;
+    }
+
+    .pop-alert {
+        max-width: 100%;
+        width: 300px;
+        left: calc(50% - (300px / 2));
+        right: calc(50% - (300px / 2));
+    }
+}

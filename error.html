@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error</title>
+    <style>
+        body {
+            padding: 8px 0px;
+            overflow: hidden;
+            margin: 0;
+            font-family: Helvetica;
+        }
+        header {
+            width: 100%;
+            background-color: #4169e1;
+            font-size: 1.5em;
+            padding: 8px;
+            color: #fff;
+        }
+        .error-section {
+            padding: 15px;
+        }
+        .error-section h1 {
+            font-size: 2em;
+            color: #0f0f0f;
+        }
+        .error-section .msg {
+            font-size: 1.2em;
+            padding: 0px 8px;
+            color: #f00;
+        }
+        .home a {
+            font-size: 1em;
+            color: #09e909;
+        }
+        @media only screen and (min-width: 768px) {
+            .error-section {
+                padding: 15px 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <script>
+            document.write(window.location.hostname);
+        </script>
+    </header>
+    <div class="error-section">
+        <h1>Oops! something went wrong</h1>
+        <div class="msg">
+            <p>
+                Something went wrong and we are trying to get it fix
+                as soon as we can.
+            </p>
+        </div>
+        <div class="home">
+            <a href="/">Go back home</a>
+        </div>
+    </div>
+</body>
+</html>

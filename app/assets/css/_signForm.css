@@ -1,0 +1,194 @@
+/**
+    @color-1: #FFFFFF;
+    @color-2: #000000;
+    @color-3: #8A2BE2;
+    @color-4: #4169E1;
+    @color-5: #FF6347;
+*/
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #fff;
+}
+body > .signup {
+    max-width: 100%;
+    max-height: 100%;
+    width: 800px;
+    height: auto;
+    background-color: #fff;
+    margin: auto auto;
+    margin-top: 2%;
+    padding: 35px;
+    overflow: hidden;
+    position: relative;
+}
+body > .signup .LOGO {
+    position: relative;
+    top: -25px;
+}
+body > .signup h1{
+    font-size: 1.3em;
+}
+body > .signup > form {
+    display: block;
+    padding-top: 8px;
+    width: 100%;
+}
+body > .signup > form label {
+    color: #111;
+    font-size: 0.9em;
+}
+body > .signup > form .input {
+    width: 100%;
+    background-color: inherit;
+    margin-bottom: 5px;
+    color: #111;
+}
+body > .signup > form .input > div {
+    width: 100%;
+    background-color: inherit;
+    border: 2px solid transparent;
+    border-bottom: 1px solid #4d4a4a;
+    margin-bottom: 5px;
+    padding: 4px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+body > .signup > form .input > div:hover {
+    border-bottom: 1px solid #0c0c0c;
+}
+body > .signup > form .input > div::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+body > .signup > form .input > div .bi {
+    width: 10%;
+    font-size: 1.8em;
+    color: #111;
+    height: 100%;
+    float: left;
+}
+body > .signup > form .input > div input {
+    border: none;
+    background-color: transparent;
+    width: 90%;
+    margin: 0;
+    height: 100%;
+    padding: 8px;
+    float: left;
+    font-size: 0.9em;
+    color: #111;
+}
+body > .signup > form .input > div input:focus {
+    outline: none;
+    border: none;
+    box-shadow:  0px 0px 0px transparent;
+}
+body > .signup > form .input > div.dateOfBirth > i {
+    width: 10%;
+}
+body > .signup > form .input > div.dateOfBirth > input,
+body > .signup > form .input > div.dateOfBirth > select {
+    width: calc(90% / 3);
+    color: #111;
+    background-color: transparent;
+}
+body > .signup > form .input > div select {
+    border: none;
+    padding: 8px;
+}
+body > .signup > form .input > div select:focus {
+    outline: none;
+    border: none;
+    box-shadow:  0px 0px 0px transparent;
+    background-color: transparent;
+}
+body > .signup > form .footer {
+    padding: 4px;
+    text-align: right;
+}
+body > .signup > form .footer > div {
+    text-align: left;
+    color: #111;
+    font-size: 0.9em;
+    padding: 3px;
+}
+body > .signup > form .footer > div a {
+    color: #233d8a;
+}
+body > .signup > form .footer input[type=submit] {
+    background-color: #4169e1;
+    border: none;
+    padding: 8px 25px;
+    color: #fff;
+    font-size: 0.9em;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+}
+body > .signup > form .footer input[type=submit]:hover {
+    background-color: #1238a8;    
+}
+.error {
+    color: rgb(221, 75, 75);
+    font-size: 0.9em;
+    padding-top: 5px;
+}
+#loader {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(255,255,255,0.8);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+#loader > div {
+    width: 100%;
+    position: relative;
+    top: 0;
+    overflow: hidden;
+    background-color: transparent;
+    padding: 0;
+}
+#loader > div > div {
+    position: relative;
+    width: 50%;
+    background-color: #1238a8;
+    padding: 1px;
+    -webkit-animation: Loader 2s infinite forwards;
+    animation: Loader 2s infinite forwards;
+}
+@-webkit-keyframes Loader {
+    from { left: -100%; }
+    to { left: 100%; }
+}
+@keyframes Loader {
+    from { left: -100%; }
+    to { left: 100%; }
+}
+
+@media only screen and (min-width: 768px) {
+    html, body {
+        background-color: #f5f5f5;
+    }
+    body > .signup {
+        box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
+    }
+    body > .signup > form {
+        width: 50%;
+    }
+    body > .signup > form .footer input[type=submit] {
+        background-color: #4169e1;
+        display: initial;
+        padding: 8px 25px;
+        font-size: 0.9em;
+        cursor: pointer;
+        width: initial;
+    }
+}

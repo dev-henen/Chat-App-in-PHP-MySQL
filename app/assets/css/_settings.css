@@ -1,0 +1,100 @@
+#settings {
+    width: 100%;
+    padding: 0px;
+    height: 100%;
+    border-right: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    overflow-x: hidden;
+}
+#settings > header {
+    width: 100%;
+    padding: 8px;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
+    position: relative;
+    top: 0;
+    border-bottom: 1px solid #ddd;
+}
+#settings > header::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+#settings > header .icon {
+    float: right;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #4169e1;
+    overflow: hidden;
+}
+#settings > header .icon img {
+    width: 100%;
+    height: auto;
+    transform: scale(1.5em);
+}
+#settings > header h3 {
+    padding: 8px 25px;
+    float: right;
+}
+#settings > header .back {
+    float: left;
+    font-size: 2em;
+    padding: 2px;
+}
+#settings > header .back .bi {
+    cursor: pointer;
+}
+#settings > section {
+    padding: 8px;
+    padding-top: 50px;
+}
+#settings > section ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+#settings > section ul li {
+    border: 1px solid #ddd;
+    position: relative;
+    border-radius: 8px;
+    margin-bottom: 4px;
+    padding: 4px;
+    transition: .3s;
+}
+#settings > section ul li::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+#settings > section ul li .bi {
+    width: 10%;
+    float: left;
+    font-size: 1.1em;
+    color: #4169e1;
+    display: block;
+    padding: 4px;
+}
+#settings > section ul li:hover .bi {
+    color: #505050;
+}
+#settings > section ul li a {
+    display: block;
+    padding: 6px;
+    width: 90%;
+    float: left;
+    text-decoration: none;
+    color: #505050;
+    font-size: 0.9em;
+}
+#settings > section ul li:hover a {
+    color: #4169e1;
+}
+
+@media screen and (min-width: 768px) {
+    #settings > section ul li .bi {
+        width: 5%;
+    }
+    #settings > section ul li a {
+        width: 95%;
+    }
+}

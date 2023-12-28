@@ -1,0 +1,289 @@
+@font-face {
+    font-family: notoColorEmoji;
+    src: url(/app/assets/fonts/NotoColorEmoji-Regular.ttf);
+}
+
+.myProfile {
+    background-color: #e4eefd;
+}
+.myProfile > header {
+    width: 100%;
+    height: auto;
+    background: transparent;
+}
+.myProfile > header > div {
+    width: 100%;
+}
+.myProfile > header > div::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.myProfile > header > div:first-child > div {
+    width: 50%;
+    float: left;
+    padding: 15px;
+    padding-top: 30px;
+}
+.myProfile > header > div:first-child > div:first-child h1 {
+    color: #1f1f1f;
+    font-size: 1.4em;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.myProfile > header > div:first-child > div:last-child {
+    text-align: right;
+}
+.myProfile > header > div:first-child > div:last-child button:first-child {
+    background-color: #f3f3f3;
+    border: none;
+    outline: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    text-align: center;
+    color: #000;
+    font-size: 1em;
+    position: relative;
+    bottom: 0;
+}
+
+
+
+
+
+.myProfile > section {
+    width: 100%;
+    min-height: 100%;
+    min-height: 100vh;
+    background-color: #fff;
+    color: #0f0f0f;
+    border-top-left-radius: 35px;
+    border-top-right-radius: 35px;
+    padding: 25px 0px;
+    padding-bottom: 100px;
+    box-shadow: -3px 0px 10px rgba(0,0,0,0.1);
+    overflow-y: auto;
+    transition: .5s;
+    position: relative;
+    top: 0px;
+    z-index: 1;
+}
+.myProfile > section > div {
+    width: 100%;
+    padding: 8px;
+}
+.myProfile > section > div:first-child .photo {
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #00ff00;
+    background: -webkit-linear-gradient(to top right, #87ceeb, transparent),
+                linear-gradient(to top, #00ff00 50%, transparent);
+    background: linear-gradient(to top right, #87ceeb, transparent),
+                linear-gradient(to top, #00ff00 50%, transparent);
+    background-blend-mode: screen;
+    height: 150px;
+    width: 150px;
+    border-radius: 30px;
+    box-shadow: 0px 0px 15px #00ff0031;
+    overflow: hidden;
+}
+.myProfile > section > div:first-child .photo .inner {
+    width: 100%;
+    height: 100%;
+    border: 6px solid rgba(255,255,255,0.5);
+    border-radius: inherit;
+    padding: 8px;
+    overflow: hidden;
+}
+.myProfile > section > div:first-child .photo .inner img {
+    width: 100%;
+    height: auto;
+    transform: scale(1.5);
+}
+.myProfile > section > div:first-child h1 {
+    color: #2f2f2f;
+    text-align: center;
+    font-size: 1.5em;
+    padding: 15px;
+}
+.myProfile > section > div:first-child > div {
+    text-align: center;
+}
+.myProfile > section > div:first-child > div time {
+    display: inline-block;
+    text-align: center;
+    background-color: #c8ff00;
+    padding: 5px;
+    border-radius: 15px;
+    font-size: 0.9em;
+}
+.myProfile > section > div:last-child .quote {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #00ff002a;
+    padding: 15px;
+    text-align: center;
+    font-size: 0.9em;
+    border-radius: 15px;
+    font-family: Helvetica, notoColorEmoji;
+}
+.myProfile > section > div:last-child .sect {
+    text-align: center;
+    padding: 15px 8px;
+}
+.myProfile > section > div:last-child .sect address {
+    font-size: 1em;
+    color: #000;
+}
+
+.myProfile > section > div:last-child .set {
+    padding: 8px;
+    text-align: center;
+}
+.myProfile > section > div:last-child .set button {
+    background-color: #000;
+    border: none;
+    width: 100%;
+    color: #fff;
+    font-size: 0.9em;
+    padding: 15px;
+    border-radius: 25px;
+}
+
+
+
+
+
+
+
+
+.editMyProfile {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    background-color: inherit;
+    display: none;
+    z-index: 1;
+}
+.editMyProfile > header {
+    width: 100%;
+    height: auto;
+    background: transparent;
+}
+.editMyProfile > header > div {
+    width: 100%;
+}
+.editMyProfile > header > div::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.editMyProfile > header > div:first-child > div {
+    width: 50%;
+    float: left;
+    padding: 15px;
+    padding-top: 30px;
+}
+.editMyProfile > header > div:first-child > div:first-child h1 {
+    color: #1f1f1f;
+    font-size: 1.4em;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.editMyProfile > header > div:first-child > div:last-child {
+    text-align: right;
+}
+.editMyProfile > header > div:first-child > div:last-child button:first-child {
+    background-color: #f3f3f3;
+    border: none;
+    outline: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    text-align: center;
+    color: #000;
+    font-size: 1em;
+    position: relative;
+    bottom: 0;
+}
+
+
+
+
+
+.editMyProfile {
+    background-color: #e4eefd;
+}
+.editMyProfile > section {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    color: #0f0f0f;
+    border-top-left-radius: 35px;
+    border-top-right-radius: 35px;
+    padding: 25px 0px;
+    padding-bottom: 100px;
+    box-shadow: -3px 0px 10px rgba(0,0,0,0.1);
+    overflow-y: scroll;
+    transition: .5s;
+    position: relative;
+    top: 0px;
+    z-index: 1;
+}
+.editMyProfile > section > div {
+    width: 100%;
+    padding: 8px;
+}
+.editMyProfile > section > div form {
+    display: block;
+    background-color: #f3f3f3;
+    padding: 8px;;
+}
+.editMyProfile > section > div form input,
+.editMyProfile > section > div form select,
+.editMyProfile > section > div form textarea {
+    border: none;
+    background-color: #fff;
+    padding: 15px 8px;
+    width: 100%;
+    display: block;
+    resize: none;
+    font-family: Helvetica, notoColorEmoji;
+}
+.editMyProfile > section > div form label {
+    display: block;
+    padding: 4px;
+    padding-top: 8px;
+}
+
+
+
+
+.editMyProfile > section > div:last-child .set {
+    padding: 8px;
+    text-align: center;
+    margin-bottom: 100px;
+}
+.editMyProfile > section > div:last-child .set button {
+    background-color: #4169e1;
+    border: none;
+    width: 100%;
+    color: #fff;
+    font-size: 0.9em;
+    padding: 15px;
+    border-radius: 25px;
+}
+
+@media only screen and (min-width: 768px) {
+    .editMyProfile {
+        width: 40%;
+    }
+}
