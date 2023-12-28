@@ -93,11 +93,7 @@ Ensure the correct database information is set in the "config.php" file to estab
 
 ```php
 // config.php
-
-$host = "your_database_host";
-$username = "your_database_username";
-$password = "your_database_password";
-$database = "your_database_name";
+    $database = new Connection('database_host', 'database_username', 'database_password', 'database_name');
 ```
 
 ## Disclaimer
